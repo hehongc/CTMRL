@@ -1,6 +1,6 @@
 # Improving Generalization in Context-based Offline Meta-Reinforcement Learning via Cross-task Contexts, ICML 2025
 
-## Additional Experimental Results in Meta-World ML1 Environment
+## Additional Experimental Results in the Meta-World ML1 Environment
 
 | Task set                  | Dataset return | CTMRL (ours)  | GENTLE        | IDAQ          | CSRO          | ANOLE         | CORRO     | FOCAL++       | FOCAL     | MACAW         | BOReL     |
 | ------------------------- | -------------- | ------------- | ------------- | ------------- | ------------- | ------------- | --------- | ------------- | --------- | ------------- | --------- |
@@ -36,6 +36,11 @@
 | window-open               | 2120.12        | **1.02±0.05** | 0.97±0.02     | 0.96±0.02     | 0.98±0.03     | 0.95±0.02     | 0.93±0.02 | 0.86±0.04     | 0.84±0.05 | 0.17±0.10     | 0.03±0.00 |
 
 
+## Analysis of the Use of Cosine Similarity in Contrastive Loss
+
+
+
+## Additional Analysis of w^{spe} and w^{cro}
 
 
 ## Installation
