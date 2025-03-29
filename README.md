@@ -2,6 +2,7 @@
 
 ## Additional Experimental Results in the Meta-World ML1 Environment
 
+### Table 1. Additional experimental results in the Meta-World ML1 environment.
 | Task set                  | Dataset return | CTMRL (ours)  | GENTLE        | IDAQ          | CSRO          | ANOLE         | CORRO     | FOCAL++       | FOCAL     | MACAW         | BOReL     |
 | ------------------------- | -------------- | ------------- | ------------- | ------------- | ------------- | ------------- | --------- | ------------- | --------- | ------------- | --------- |
 | Bin-Picking               | 3807.73        | 0.10±0.04     | 0.09±0.04     | 0.12±06       | 0.15±0.08     | 0.06±0.05     | 0.11±0.06 | 0.08±0.04     | 0.07±0.03 | **0.18±0.10** | 0.00±0.00 |
@@ -36,11 +37,40 @@
 | Window-Open               | 2120.12        | **1.02±0.05** | 0.97±0.02     | 0.96±0.02     | 0.98±0.03     | 0.95±0.02     | 0.93±0.02 | 0.86±0.04     | 0.84±0.05 | 0.17±0.10     | 0.03±0.00 |
 
 
+## Analysis of the Number of Codes During Meta-training
+
+### Table 2. Comparison of the performance of using different numbers of codes during meta-training.
+
+|                                 | Training with a single code | Training with all codes |
+| ------------------------------- | --------------------------- | ----------------------- |
+| Performance                     | -85.44±7.47                 | -120.05±16.22           |
+| Cosine similarity within codes  | 0.5011721253395081          | 0.7657914757728577      |
+| Euclidean distance within codes | 2.9890005588531494          | 1.0864074230194092      |
+
 ## Analysis of the Use of Cosine Similarity in Contrastive Loss
+
+### Table 3. Comparison with the contrastive loss based on cosine similarity.
+
+| Environment / Task set | CTMRL        | CTMRL with cosine similarity in contrastive loss |
+| ---------------------- | ------------ | ------------------------------------------------ |
+| Half-Cheetanh-Vel      | -85.44±7.47  | -85.89±7.09                                      |
+| Hopper-Rand-Params     | 360.91±4.89  | 360.04±6.13                                      |
+| Walker-Rand-Params     | 391.92±28.26 | 389.33±23.44                                     |
+| Reach                  | 0.92±0.02    | 0.92±0.03                                        |
+
 
 
 
 ## Additional Analysis of w^{spe} and w^{cro}
+
+### Table 4. Additional analysis of w^{spe} and w^{cro}.
+
+| Environment / Task set | CTMRL        | w^{spe}=w^{cro}=0.5 | w^{spe}=1, w^{cro}=0 |
+| ---------------------- | ------------ | ------------------- | -------------------- |
+| Half-Cheetanh-Vel      | -85.44±7.47  | -86.26±7.91         | -124.03±15.44        |
+| Hopper-Rand-Params     | 360.91±4.89  | 350.63±11.90        | 309.39±19.50         |
+| Walker-Rand-Params     | 391.92±28.26 | 372.66±12.05        | 322.97±28.93         |
+| Reach                  | 0.92±0.02    | 0.90±0.02           | 0.77±0.10            |
 
 
 ## Installation
