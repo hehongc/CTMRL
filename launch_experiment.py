@@ -263,7 +263,7 @@ def deep_update_dict(fr, to):
 @click.option('--exp_name', default=None)
 @click.option('--wandb_project_name', default='')
 @click.option('--wandb_run_name', default='')
-@click.option("--codebook_size", default=4)
+@click.option("--codebook_size", default=16)
 def main(config, gpu, seed=0, exp_name=None,
          wandb_project_name=None, wandb_run_name=None,
          codebook_size=None):

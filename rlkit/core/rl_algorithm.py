@@ -387,11 +387,11 @@ class OfflineMetaRLAlgorithm(metaclass=abc.ABCMeta):
         gt.set_def_unique(False)
         self._current_path_builder = PathBuilder()
 
-        wandb.init(
-            project=self.wandb_project_name,
-            name=self.wandb_run_name,
-            # mode="offline"
-        )
+        # wandb.init(
+        #     project=self.wandb_project_name,
+        #     name=self.wandb_run_name,
+        #     # mode="offline"
+        # )
 
 
         # at each iteration, we first collect data from tasks, perform meta-updates, then try to evaluate
@@ -419,14 +419,16 @@ class OfflineMetaRLAlgorithm(metaclass=abc.ABCMeta):
                 wandb_stat["n_train_steps_total"] = self._n_train_steps_total
                 self._n_train_steps_total += 1
 
-                if train_step != self.num_train_steps_per_itr - 1:
-                    wandb.log(wandb_stat)
+                # if train_step != self.num_train_steps_per_itr - 1:
+                #     wandb.log(wandb_stat)
 
 
             all_indices = np.array(self.train_tasks)
             all_context = None
             with torch.no_grad():
-                all_context, _, _ = self.take_all_training_tasks_contexts(
+                # all_context, _, _ = self.take_all_training_tasks_contexts(
+                #     all_indices, use_VQ)
+                all_context = self.take_all_training_tasks_contexts(
                     all_indices, use_VQ)
                 all_context = all_context.detach().cpu()
 
@@ -468,7 +470,7 @@ class OfflineMetaRLAlgorithm(metaclass=abc.ABCMeta):
 
             gt.stamp('eval')
             self._end_epoch()
-            wandb.log(wandb_stat)
+            # wandb.log(wandb_stat)
 
 
 

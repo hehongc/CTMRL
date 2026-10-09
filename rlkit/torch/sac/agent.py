@@ -73,8 +73,8 @@ class PEARLAgent(nn.Module):
         self.register_buffer('z_vars', torch.zeros(1, latent_dim))
 
         self.collected_context_embeddings = None
-        self.select_codes_score = None
-        self.z_means_score = None
+        # self.select_codes_score = None
+        # self.z_means_score = None
         # self.params = None
         self.indices = None
         self.code = None

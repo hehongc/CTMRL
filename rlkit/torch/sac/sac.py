@@ -280,7 +280,8 @@ class CSROSoftActorCritic(OfflineMetaRLAlgorithm):
             obs, context_for_z, use_VQ, task_indices=all_indices, for_update=True)
 
         # return ptu.get_numpy(self.agent.z_means), ptu.get_numpy(self.agent.z_vars)
-        return task_z_with_match, z_means_score, select_codes_score
+        # return task_z_with_match, z_means_score, select_codes_score
+        return self.agent.z_means
 
 
     def InfoNCE_loss(self, context_embedding_1, context_embedding_2):
